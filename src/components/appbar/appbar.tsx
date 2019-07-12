@@ -1,22 +1,35 @@
+import { History } from 'history';
 import React from 'react';
-import { History } from 'history'
 
-import style from './appbar.module.css';
 import ROUTES from '../../constants/route';
+import style from './appbar.module.css';
+
+import { getName } from '../../utils/user';
+
+interface IName {
+  firstName?: string;
+  lastName?: string;
+}
 
 interface IAppbarProps {
   userId: string;
-  onBack?: Function;
+  onBack?: () => void;
   history?: History;
+  name?: IName;
 }
 
 function Appbar(props: IAppbarProps) {
   function navigate() {
-    props.onBack && props.onBack();
+    if (props.onBack) {
+      props.onBack();
+    }
+
     document.body.classList.remove('fixed');
 
     setTimeout(() => {
-      props.history && props.history.push(ROUTES.ROOT);
+      if (props.history) {
+        props.history.push(ROUTES.ROOT);
+      }
     }, 500);
   }
 
@@ -26,7 +39,7 @@ function Appbar(props: IAppbarProps) {
         arrow_back
       </i>
     </div>}
-    <p className={style.title}>Appbar</p>
+    <p className={style.title}>{props.name ? getName(props.name.firstName, props.name.lastName) : 'People'}</p>
   </div>;
 }
 

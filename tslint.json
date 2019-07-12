@@ -1,0 +1,18 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:recommended"
+    ],
+    "linterOptions": {
+      "exclude": [
+          "bin",
+          "**/__test__",
+          "src/serviceWorker.ts"
+      ]
+    },
+    "jsRules": {},
+    "rules": {
+      "quotemark": [true, "single", "jsx-double"]
+    },
+    "rulesDirectory": []
+}

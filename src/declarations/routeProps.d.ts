@@ -1,11 +1,11 @@
 declare module 'RouteProps' {
   import { RouteComponentProps } from 'react-router-dom';
 
-  interface MatchParams {
+  interface IMatchParams {
     id: string;
   }
 
-  interface Props extends RouteComponentProps<MatchParams> {
+  interface IProps extends RouteComponentProps<MatchParams> {
 
   }
 }

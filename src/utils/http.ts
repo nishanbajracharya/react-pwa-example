@@ -7,11 +7,11 @@ const instance = axios.create({
   baseURL: BASE_URL,
 });
 
-interface Params {
+interface IParams {
   [name: string]: string | number;
 }
 
-function get(url: string, params?: Params) {
+function get(url: string, params?: IParams) {
   const getURL = params ? `${url}?${qs.stringify(params)}` : url;
 
   return instance.get(getURL);

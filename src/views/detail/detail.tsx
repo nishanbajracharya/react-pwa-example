@@ -1,20 +1,20 @@
 import React from 'react';
 
-import style from './detail.module.css';
 import Appbar from '../../components/appbar';
 import userService from '../../services/users';
+import style from './detail.module.css';
 
-import * as User from 'UserProps';
 import * as Route from 'RouteProps';
+import * as User from 'UserProps';
 
-interface State {
+interface IState {
   class: string;
-  user: User.Props;
+  user: User.IProps;
   id: string | number;
 }
 
-class Detail extends React.Component<Route.Props, State> {
-  constructor(props: Route.Props) {
+class Detail extends React.Component<Route.IProps, IState> {
+  constructor(props: Route.IProps) {
     super(props);
 
     this.state = {
@@ -24,12 +24,12 @@ class Detail extends React.Component<Route.Props, State> {
     };
   }
 
-  componentDidMount() {
+  public componentDidMount() {
     if (!this.state.user.id) {
       userService.getUserDetail(this.state.id)
-        .then(user => {
+        .then((user) => {
           this.setState({
-            user
+            user,
           });
         });
     }
@@ -39,7 +39,7 @@ class Detail extends React.Component<Route.Props, State> {
     document.body.classList.add('fixed');
   }
 
-  open = () => {
+  public open = () => {
     setTimeout(() => {
       this.setState({
         class: [style.root, style.up].join(' '),
@@ -47,16 +47,18 @@ class Detail extends React.Component<Route.Props, State> {
     }, 50);
   }
 
-  close = () => {
+  public close = () => {
     this.setState({
       class: style.root,
     });
   }
 
-  render() {
+  public render() {
     return <div className={this.state.class}>
-      <Appbar userId={this.props.match.params.id} onBack={this.close} history={this.props.history} />
-      {this.state.user.firstName} {this.state.user.lastName}
+      <Appbar userId={this.props.match.params.id} onBack={this.close} history={this.props.history} name={{
+        firstName: this.state.user.firstName,
+        lastName: this.state.user.lastName,
+      }} />
     </div>;
   }
 }

@@ -1,5 +1,5 @@
 declare module 'UserProps' {
-  interface Address {
+  interface IAddress {
     city: string;
     state: string;
     country: string;
@@ -8,12 +8,12 @@ declare module 'UserProps' {
     streetAddress: string;
   }
 
-  export interface Props {
+  export interface IProps {
     id: number;
     email: string;
     phone: string;
     lastName: string;
-    address: Address;
+    address: IAddress;
     firstName: string;
     profileImage: string;
   }

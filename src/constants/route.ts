@@ -1,6 +1,6 @@
 const ROUTES = {
-  ROOT: '/',
   DETAIL: '/:id',
+  ROOT: '/',
 };
 
 export default ROUTES;
