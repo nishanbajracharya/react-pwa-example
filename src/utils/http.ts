@@ -8,7 +8,7 @@ const instance = axios.create({
 });
 
 interface Params {
-  [name: string]: string | Number;
+  [name: string]: string | number;
 }
 
 function get(url: string, params?: Params) {

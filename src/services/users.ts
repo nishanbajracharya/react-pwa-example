@@ -2,7 +2,7 @@ import http from '../utils/http';
 import { API } from '../constants/api';
 
 interface UserParams {
-  [name: string]: string | Number;
+  [name: string]: string | number;
 }
 
 async function getUsers(params?: UserParams) {
@@ -15,6 +15,17 @@ async function getUsers(params?: UserParams) {
   }
 }
 
+async function getUserDetail(id: string | number) {
+  try {
+    const response = await http.get(API.USERS + '/' + id);
+    return response.data;
+  }
+  catch (err) {
+    return err;
+  }
+}
+
 export default {
   getUsers,
+  getUserDetail,
 };
