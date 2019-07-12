@@ -7,7 +7,7 @@ interface IAppbarProps {
 }
 
 function Appbar(props: IAppbarProps) {
-  return <div>Appbar {props.userId}</div>;
+  return <div className={style.root}>Appbar {props.userId}</div>;
 }
 
 export default Appbar;

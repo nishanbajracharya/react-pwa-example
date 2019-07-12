@@ -6,7 +6,7 @@ import Appbar from '../../components/appbar';
 import * as Route from 'RouteProps';
 
 function Detail(props: Route.Props) {
-  return <div>
+  return <div className={style.root}>
     <Appbar userId={props.match.params.id} />
     Detail
   </div>;
