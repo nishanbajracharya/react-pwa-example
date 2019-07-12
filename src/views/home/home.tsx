@@ -3,11 +3,10 @@ import { Link } from 'react-router-dom';
 
 import style from './home.module.css';
 import Appbar from '../../components/appbar';
+import userService from '../../services/users';
 
 import * as User from 'UserProps';
 import * as Route from 'RouteProps';
-
-import userService from '../../services/users';
 
 interface State {
   users: Array<User.Props>;
