@@ -1,3 +1,20 @@
 .root {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   margin: 0;
+  z-index: 2;
+  opacity: 0.5;
+  position: fixed;
+  transition: 500ms;
+  padding-top: 60px;
+  background: #fff;
+  transform: translateY(100vh);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+.root.up {
+  opacity: 1;
+  transform: translateY(0);
 }
