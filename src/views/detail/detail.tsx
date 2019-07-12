@@ -1,9 +1,15 @@
 import React from 'react';
 
 import style from './detail.module.css';
+import Appbar from '../../components/appbar';
 
-function Detail() {
-  return <div>Detail</div>;
+import * as Route from 'RouteProps';
+
+function Detail(props: Route.Props) {
+  return <div>
+    <Appbar userId={props.match.params.id} />
+    Detail
+  </div>;
 }
 
 export default Detail;
