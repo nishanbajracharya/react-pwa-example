@@ -7,7 +7,7 @@
   z-index: 2;
   opacity: 0.5;
   position: fixed;
-  transition: 500ms;
+  transition: 300ms;
   padding-top: 60px;
   background: #fff;
   transform: translateY(100vh);

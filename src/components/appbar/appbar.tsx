@@ -30,7 +30,7 @@ function Appbar(props: IAppbarProps) {
       if (props.history) {
         props.history.push(ROUTES.ROOT);
       }
-    }, 500);
+    }, 300);
   }
 
   return <div className={style.root}>
