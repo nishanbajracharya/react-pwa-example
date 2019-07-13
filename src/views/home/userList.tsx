@@ -1,5 +1,10 @@
 import React from 'react';
 
+import {
+  AutoSizer,
+  List,
+} from 'react-virtualized';
+
 import ListItem from '../../components/listItem';
 import style from './user-list.module.css';
 
@@ -11,9 +16,25 @@ interface IUserListProps {
 
 function UserList(props: IUserListProps) {
   return <div className={style.root}>
-    {
-      props.users.map((user) => <ListItem key={user.id} user={user} linkTo={`/${user.id}`} linkState={{ user }}/>)
-    }
+    <AutoSizer>
+      {({ width, height }) =>
+        <div>
+          <List
+            rowCount={props.users.length}
+            width={width}
+            height={height}
+            rowHeight={56}
+            rowRenderer={({ index, key, style: rowStyle }) =>
+              <ListItem
+                key={key}
+                style={rowStyle}
+                user={props.users[index]}
+                linkTo={`/${props.users[index].id}`}
+                linkState={{ user: props.users[index] }} />}
+          />
+        </div>
+      }
+    </AutoSizer>
   </div>;
 }
 

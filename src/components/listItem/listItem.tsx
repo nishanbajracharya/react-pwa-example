@@ -11,10 +11,11 @@ interface IListItemProps {
   user: User.IProps;
   linkTo: string;
   linkState: {};
+  style: {};
 }
 
 function ListItem(props: IListItemProps) {
-  return <div className={style.root}>
+  return <div className={style.root} style={props.style}>
     <Link
       className={style.link}
       to={{
