@@ -9,7 +9,7 @@
   position: fixed;
   transition: 300ms;
   padding-top: 60px;
-  background: #fdfdfd;
+  background: #fafafa;
   transform: translateY(100vh);
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
 }
@@ -35,6 +35,7 @@
   overflow: hidden;
   position: absolute;
   width: calc(100% + 16px);
+  border-bottom: 1px solid #efefef;
 }
 
 .backdrop img {
@@ -45,8 +46,37 @@
 }
 
 .name {
+  margin: 8px;
   color: #fff;
-  padding: 16px 0;
   font-size: 20px;
   font-weight: 700;
+  padding: 8px 12px;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.detail-list {
+  width: 100%;
+  margin-top: 32px;
+}
+
+.detail-list-item {
+  display: flex;
+  padding: 8px 16px;
+  justify-content: space-between;
+}
+
+.detail-title {
+  padding: 16px;
+  color: #424242;
+  font-weight: 600;
+}
+
+.detail-list-item .label {
+  color: #666;
+}
+
+.detail-list-item .value {
+  color: #424242;
+  font-weight: 500;
 }

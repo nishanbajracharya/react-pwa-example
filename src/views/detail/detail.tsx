@@ -68,6 +68,34 @@ class Detail extends React.Component<Route.IProps, IState> {
         </div>
         <Avatar url={this.state.user.profileImage} size={128} withThickBorder={true} withBorder={false} />
         <p className={style.name}>{getName(this.state.user.firstName, this.state.user.lastName)}</p>
+        <div className={style['detail-list']}>
+          <p className={style['detail-title']}>Address</p>
+          <div className={style['detail-list-item']}>
+            <div className={style.label}>Country</div>
+            <div className={style.value}>{this.state.user.address.country}</div>
+          </div>
+          <div className={style['detail-list-item']}>
+            <div className={style.label}>State</div>
+            <div className={style.value}>{this.state.user.address.state}</div>
+          </div>
+          <div className={style['detail-list-item']}>
+            <div className={style.label}>City</div>
+            <div className={style.value}>{this.state.user.address.city}</div>
+          </div>
+          <div className={style['detail-list-item']}>
+            <div className={style.label}>Street</div>
+            <div className={style.value}>{this.state.user.address.streetAddress}</div>
+          </div>
+          <p className={style['detail-title']}>Contact</p>
+          <div className={style['detail-list-item']}>
+            <div className={style.label}>Email</div>
+            <div className={style.value}>{this.state.user.email}</div>
+          </div>
+          <div className={style['detail-list-item']}>
+            <div className={style.label}>Phone</div>
+            <div className={style.value}>{this.state.user.phone}</div>
+          </div>
+        </div>
       </div>
     </div>;
   }
