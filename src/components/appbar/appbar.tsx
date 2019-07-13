@@ -16,6 +16,7 @@ interface IAppbarProps {
   onBack?: () => void;
   history?: History;
   name?: IName;
+  offline?: boolean;
 }
 
 function Appbar(props: IAppbarProps) {
@@ -40,6 +41,7 @@ function Appbar(props: IAppbarProps) {
       </i>
     </div>}
     <p className={style.title}>{props.name ? getName(props.name.firstName, props.name.lastName) : 'People'}</p>
+    {props.offline && <span className={style.offline}>Offline</span>}
   </div>;
 }
 
