@@ -2,7 +2,7 @@
 workbox.routing.registerRoute(
   /^https:\/\/fonts\.googleapis\.com/,
   new workbox.strategies.StaleWhileRevalidate({
-    cacheName: 'google-fonts-stylesheets',
+    cacheName: 'google-fonts-stylesheets'
   })
 );
 
@@ -13,13 +13,13 @@ workbox.routing.registerRoute(
     cacheName: 'google-fonts-webfonts',
     plugins: [
       new workbox.cacheableResponse.Plugin({
-        statuses: [0, 200],
+        statuses: [0, 200]
       }),
       new workbox.expiration.Plugin({
         maxAgeSeconds: 60 * 60 * 24 * 365,
-        maxEntries: 30,
-      }),
-    ],
+        maxEntries: 30
+      })
+    ]
   })
 );
 
@@ -27,8 +27,8 @@ workbox.routing.registerRoute(
 workbox.routing.registerRoute(
   new RegExp(`https://mock-io.herokuapp.com/.*`),
   new workbox.strategies.NetworkFirst({
-    cacheName: 'api-cache',
-  }),
+    cacheName: 'api-cache'
+  })
 );
 
 // Cache static files
