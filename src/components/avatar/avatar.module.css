@@ -1,0 +1,23 @@
+.image {
+  display: block;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+.border {
+  border: 2px solid #49c;
+}
+
+.avatar-text {
+  width: 32px;
+  height: 32px;
+  color: #fff;
+  font-size: 20px;
+  background: #49c;
+  border-radius: 50%;
+  align-items: center;
+  display: inline-flex;
+  text-decoration: none;
+  box-sizing: border-box;
+  justify-content: center;
+}

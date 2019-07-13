@@ -1,9 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import Appbar from '../../components/appbar';
 import userService from '../../services/users';
 import style from './home.module.css';
+import UserList from './userList';
 
 import * as Route from 'RouteProps';
 import * as User from 'UserProps';
@@ -34,16 +34,7 @@ class Home extends React.Component<Route.IProps, IState> {
     return <div className={style.root}>
       <Appbar userId={this.props.match.params.id} />
       {
-        this.state.users && this.state.users.length > 0 && <ul>
-          {
-            this.state.users.map((user) => <li key={user.id}>
-              <Link to={{
-                pathname: `/${user.id}`,
-                state: { user },
-              }}>{user.firstName} {user.lastName}</Link>
-            </li>)
-          }
-        </ul>
+        this.state.users && this.state.users.length > 0 && <UserList users={this.state.users} />
       }
     </div>;
   }
