@@ -64,10 +64,10 @@ class Detail extends React.Component<Route.IProps, IState> {
       }} />
       <div className={style['detail-container']}>
         <div className={style.backdrop}>
-          <img src={this.state.user.profileImage} alt="" />
+          <img src={this.state.user.profileImage} alt="" className={style['backdrop-bg']} />
+          <Avatar url={this.state.user.profileImage} size={128} withThickBorder={true} withBorder={false} />
+          <p className={style.name}>{getName(this.state.user.firstName, this.state.user.lastName)}</p>
         </div>
-        <Avatar url={this.state.user.profileImage} size={128} withThickBorder={true} withBorder={false} />
-        <p className={style.name}>{getName(this.state.user.firstName, this.state.user.lastName)}</p>
         <div className={style['detail-list']}>
           <p className={style['detail-title']}>Address</p>
           <div className={style['detail-list-item']}>

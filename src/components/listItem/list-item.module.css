@@ -1,5 +1,10 @@
 .root {
   margin: 0;
+  cursor: pointer;
+}
+
+.root:hover {
+  background: #f3f3f3;
 }
 
 .root .link {

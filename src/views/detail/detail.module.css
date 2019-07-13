@@ -20,28 +20,29 @@
 }
 
 .detail-container {
-  display: flex;
-  padding-top: 4vh;
   position: relative;
-  align-items: center;
-  flex-direction: column;
 }
 
 .backdrop {
-  top: -8px;
-  left: -8px;
-  z-index: -1;
+  width: 100%;
   height: 32vh;
+  display: flex;
   overflow: hidden;
-  position: absolute;
-  width: calc(100% + 16px);
+  position: relative;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   border-bottom: 1px solid #efefef;
 }
 
-.backdrop img {
-  width: 100%;
+.backdrop img.backdrop-bg {
+  top: -8px;
+  left: -8px;
+  z-index: -1;
   margin-top: -5vh;
   filter: blur(8px);
+  position: absolute;
+  width: calc(100% + 16px);
   -webkit-filter: blur(8px);
 }
 
@@ -57,7 +58,7 @@
 
 .detail-list {
   width: 100%;
-  margin-top: 32px;
+  margin-top: 8px;
 }
 
 .detail-list-item {
@@ -67,9 +68,9 @@
 }
 
 .detail-title {
-  padding: 16px;
   color: #424242;
   font-weight: 600;
+  padding: 20px 16px 12px;
 }
 
 .detail-list-item .label {
