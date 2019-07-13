@@ -20,7 +20,7 @@ const defaultProps: IAvatarProps = {
 function Avatar(receivedProps: IAvatarProps) {
   const props = { ...defaultProps, ...receivedProps };
   return props.url ?
-    <img src={props.url} height={props.size} alt={props.fallback} className={classnames(style.image, {
+    <img src={props.url} height={props.size} width={props.size} alt={props.fallback} className={classnames(style.image, {
       [style.border]: props.withBorder,
     })} /> :
     <span className={classnames(style['avatar-text'], {

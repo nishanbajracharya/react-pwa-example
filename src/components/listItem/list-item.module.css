@@ -6,3 +6,17 @@
   display: block;
   text-decoration: none;
 }
+
+.root .item {
+  display: flex;
+  padding: 12px 16px;
+  align-items: center;
+  box-sizing: border-box;
+  border-bottom: 1px solid #efefef;
+}
+
+.item .name {
+  color: #424242;
+  font-weight: 500;
+  padding-left: 16px;
+}
