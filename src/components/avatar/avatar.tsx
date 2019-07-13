@@ -8,6 +8,7 @@ interface IAvatarProps {
   size?: number;
   fallback?: string;
   withBorder?: boolean;
+  withThickBorder?: boolean;
 }
 
 const defaultProps: IAvatarProps = {
@@ -15,13 +16,16 @@ const defaultProps: IAvatarProps = {
   size: 32,
   url: '',
   withBorder: true,
+  withThickBorder: false,
 };
 
 function Avatar(receivedProps: IAvatarProps) {
   const props = { ...defaultProps, ...receivedProps };
   return props.url ?
-    <img src={props.url} height={props.size} width={props.size} alt={props.fallback} className={classnames(style.image, {
-      [style.border]: props.withBorder,
+    <img
+      src={props.url} height={props.size} width={props.size} alt={props.fallback} className={classnames(style.image, {
+        [style.border]: props.withBorder,
+        [style['thick-border']]: props.withThickBorder,
     })} /> :
     <span className={classnames(style['avatar-text'], {
       [style.border]: props.withBorder,

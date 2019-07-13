@@ -9,7 +9,7 @@
   position: fixed;
   transition: 300ms;
   padding-top: 60px;
-  background: #fff;
+  background: #fdfdfd;
   transform: translateY(100vh);
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
 }
@@ -17,4 +17,36 @@
 .root.up {
   opacity: 1;
   transform: translateY(0);
+}
+
+.detail-container {
+  display: flex;
+  padding-top: 4vh;
+  position: relative;
+  align-items: center;
+  flex-direction: column;
+}
+
+.backdrop {
+  top: -8px;
+  left: -8px;
+  z-index: -1;
+  height: 32vh;
+  overflow: hidden;
+  position: absolute;
+  width: calc(100% + 16px);
+}
+
+.backdrop img {
+  width: 100%;
+  margin-top: -5vh;
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+}
+
+.name {
+  color: #fff;
+  padding: 16px 0;
+  font-size: 20px;
+  font-weight: 700;
 }

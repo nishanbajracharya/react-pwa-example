@@ -1,7 +1,10 @@
+import classnames from 'classnames';
 import React from 'react';
 
 import Appbar from '../../components/appbar';
+import Avatar from '../../components/avatar';
 import userService from '../../services/users';
+import { getName } from '../../utils/user';
 import style from './detail.module.css';
 
 import * as Route from 'RouteProps';
@@ -54,11 +57,18 @@ class Detail extends React.Component<Route.IProps, IState> {
   }
 
   public render() {
-    return <div className={this.state.class}>
+    return <div className={classnames(this.state.class)}>
       <Appbar userId={this.props.match.params.id} onBack={this.close} history={this.props.history} name={{
         firstName: this.state.user.firstName,
         lastName: this.state.user.lastName,
       }} />
+      <div className={style['detail-container']}>
+        <div className={style.backdrop}>
+          <img src={this.state.user.profileImage} alt="" />
+        </div>
+        <Avatar url={this.state.user.profileImage} size={128} withThickBorder={true} withBorder={false} />
+        <p className={style.name}>{getName(this.state.user.firstName, this.state.user.lastName)}</p>
+      </div>
     </div>;
   }
 }
