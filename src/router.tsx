@@ -7,7 +7,7 @@ import Detail from './views/detail';
 import Home from './views/home';
 
 function AppRouter() {
-  return <BrowserRouter>
+  return <BrowserRouter basename={ROUTES.PUBLIC_URL}>
     <Route path={ROUTES.ROOT} component={Home} />
     <Route path={ROUTES.DETAIL} component={Detail} />
   </BrowserRouter>;

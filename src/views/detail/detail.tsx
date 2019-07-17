@@ -70,22 +70,22 @@ class Detail extends React.Component<Route.IProps, IState> {
         </div>
         <div className={style['detail-list']}>
           <p className={style['detail-title']}>Address</p>
-          <div className={style['detail-list-item']}>
+          {this.state.user.address && <div className={style['detail-list-item']}>
             <div className={style.label}>Country</div>
             <div className={style.value}>{this.state.user.address.country}</div>
-          </div>
-          <div className={style['detail-list-item']}>
+          </div>}
+          {this.state.user.address && <div className={style['detail-list-item']}>
             <div className={style.label}>State</div>
             <div className={style.value}>{this.state.user.address.state}</div>
-          </div>
-          <div className={style['detail-list-item']}>
+          </div>}
+          {this.state.user.address && <div className={style['detail-list-item']}>
             <div className={style.label}>City</div>
             <div className={style.value}>{this.state.user.address.city}</div>
-          </div>
-          <div className={style['detail-list-item']}>
+          </div>}
+          {this.state.user.address && <div className={style['detail-list-item']}>
             <div className={style.label}>Street</div>
             <div className={style.value}>{this.state.user.address.streetAddress}</div>
-          </div>
+          </div>}
           <p className={style['detail-title']}>Contact</p>
           <div className={style['detail-list-item']}>
             <div className={style.label}>Email</div>
