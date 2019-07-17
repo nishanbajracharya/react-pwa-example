@@ -15,8 +15,9 @@ interface IListItemProps {
 }
 
 function ListItem(props: IListItemProps) {
-  return <div className={style.root} style={props.style}>
+  return <div className={style.root} style={props.style} role="row">
     <Link
+      role="cell"
       className={style.link}
       to={{
         pathname: props.linkTo,

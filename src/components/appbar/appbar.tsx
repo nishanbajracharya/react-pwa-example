@@ -34,7 +34,7 @@ function Appbar(props: IAppbarProps) {
     }, 300);
   }
 
-  return <div className={style.root}>
+  return <main className={style.root}>
     {props.userId && <div className={style.back} onClick={navigate}>
       <i className="material-icons">
         arrow_back
@@ -42,7 +42,7 @@ function Appbar(props: IAppbarProps) {
     </div>}
     <p className={style.title}>{props.name ? getName(props.name.firstName, props.name.lastName) : 'People'}</p>
     {props.offline && <span className={style.offline}>Offline</span>}
-  </div>;
+  </main>;
 }
 
 export default Appbar;

@@ -18,7 +18,7 @@ function UserList(props: IUserListProps) {
   return <div className={style.root}>
     <AutoSizer>
       {({ width, height }) =>
-        <div>
+        <main>
           <List
             rowCount={props.users.length}
             width={width}
@@ -32,7 +32,7 @@ function UserList(props: IUserListProps) {
                 linkTo={`/${props.users[index].id}`}
                 linkState={{ user: props.users[index] }} />}
           />
-        </div>
+        </main>
       }
     </AutoSizer>
   </div>;
