@@ -27,7 +27,7 @@ workbox.routing.registerRoute(
 
 // Cache API response
 workbox.routing.registerRoute(
-  new RegExp(`https://mock-io.herokuapp.com/.*`),
+  new RegExp(`https://nishanbajracharya.github.io/react-pwa-example/.*`),
   new workbox.strategies.NetworkFirst({
     cacheName: 'api-cache'
   })
